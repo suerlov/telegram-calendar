@@ -44,7 +44,7 @@ md`${userName} uses ${md.bold("Group Meetup Facilitator")} to organize a group m
 
 Please click on the link below to vote for the dates that work for you. You can vote for multiple dates:
 
-${md.link(`https://t.me/${this.botName}/calendar?startapp=${calendarRef}`, `https://t.me/${this.botName}/calendar?startapp=${calendarRef}`)}`;
+${md.link(`https://t.me/${this.botName}/my93Tantia?startapp=${calendarRef}`, `https://t.me/${this.botName}/my93Tantia?startapp=${calendarRef}`)}`;
 
         return await this.sendMessage(chatId, md.build(linkMessage));
     }
