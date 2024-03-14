@@ -14,18 +14,20 @@ class TelegramAPI {
 		const expectedHash = urlParams.get("hash");
 		urlParams.delete("hash");
 		urlParams.sort();
-	  
+
 		let dataCheckString = "";
-	  
+
 		for (const [key, value] of urlParams.entries()) {
 		  dataCheckString += `${key}=${value}\n`;
 		}
-	  
+
 		dataCheckString = dataCheckString.slice(0, -1);
 		let data = Object.fromEntries(urlParams);
 		data.user = JSON.parse(data.user||null);
 		data.receiver = JSON.parse(data.receiver||null);
 		data.chat = JSON.parse(data.chat||null);
+
+		console.log(dataCheckString);
 
 		const secretKey = await hmacSha256(this.token, "WebAppData");
 		const calculatedHash = hex(await hmacSha256(dataCheckString, secretKey));
@@ -103,3 +105,5 @@ class TelegramAPI {
 }
 
 export { TelegramAPI as Telegram }
+
+
