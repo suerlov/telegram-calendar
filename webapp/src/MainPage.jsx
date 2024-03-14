@@ -10,6 +10,8 @@ import Home from './Home';
 function MainPage() {
 	const { ready, initData, backgroundColor } = useWebApp()
 
+	console.log(initData);
+
 	useEffect(() => {
 		ready();
 	});
